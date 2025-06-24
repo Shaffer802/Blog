@@ -1,0 +1,25 @@
+.headers{
+    color: hsl(0, 0%, 90%);
+    font-weight: bold;
+}
+p{
+    color: hsl(0, 0%, 80%);
+}
+
+.post-preview{
+    background-color: hsla(0, 100%, 57%, 0.664);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.post-preview:hover{
+    background-color: hsla(0, 100%, 57%, 0.8);
+    cursor: pointer;
+}
+.post-preview.title{
+    color: hsl(0, 0%, 0%);
+    font-weight: bold;
+}
+.post-preview-expert{
+    color: hsl(0, 0%, 99%);
+}
