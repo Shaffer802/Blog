@@ -1,25 +1,44 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Posts from "./components/Posts";
-import NavBar from "./components/NavBar";
+import About from "./components/About";
+import Contact from "./components/Contact";
+
+
 
 import './App.css';
 
 function App() {
 
   const posts = [
-    { id: 1, title: "First Post", content: "Hello World!" },
-    { id: 2, title: "Second Post", content: "Learning React is fun!"},
+    { id: 1, title: "First Post", content: "Hello World!", date: "25/6/2025"},
+    { id: 2, title: "Second Post", content: "Learning React is fun!", date: "7/4/2025"},
+    { id: 3, title: "Third Post", content: "Learning React is fun!", date: "17/1/2025"},
+    { id: 4, title: "Fourth Post", content: "Learning React is fun!", date: "5/2/2025"},
+    { id: 5, title: "Fifth Post", content: "Learning React is fun!", date: "6/3/2025"},
+    { id: 6, title: "Sixth Post", content: "Learning React is fun!", date: "24/11/2024"},
+    { id: 7, title: "Seventh Post", content: "Learning React is fun!", date: "10/10/2023"},
   ];
+
+  const sortedPosts = [...posts].sort((a, b) => {
+    const parseDate = (str) => {
+      const [day, month, year] = str.split('/').map(Number);
+      return new Date(year, month - 1, day);
+    };
+    return parseDate(b.date) - parseDate(a.date);
+  });
 
   return (
     <>
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/posts" element={<Posts posts={posts} />} />
+          <Route path="/" element={<Home posts={sortedPosts} />} />
+          <Route path="/posts" element={<Posts posts={sortedPosts} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
     </>

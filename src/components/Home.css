@@ -6,7 +6,7 @@ p{
     color: hsl(0, 0%, 80%);
 }
 
-.post-preview{
+.home-post-preview{
     background-color: hsla(0, 100%, 57%, 0.664);
     border-radius: 5px;
     padding: 10px;

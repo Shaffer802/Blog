@@ -1,0 +1,9 @@
+.posts{
+    margin-top: 20px;
+}
+.post-preview{
+    background-color: hsla(0, 100%, 57%, 0.664);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
